@@ -1,0 +1,10 @@
+{
+  "name": "ksic-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "KSIC Mysore Silk Heritage Website",
+  "scripts": {
+    "build": "echo 'Static build ready'",
+    "start": "npx serve -s ."
+  }
+}
