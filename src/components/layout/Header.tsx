@@ -111,8 +111,8 @@ export const Header: React.FC = () => {
           <Image
             src="/assets/brand/ksic-logo.png"
             alt="KSIC Mysore Silk Seal Estd 1912"
-            width={160}
-            height={44}
+            width={175}
+            height={48}
             priority
             className={styles.brandLogoImg}
           />
