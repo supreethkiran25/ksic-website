@@ -14,7 +14,7 @@
               backdrop-filter 320ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 1. At the very top of Hero Section: 100% Full Transparent Navbar */
+/* 1. At the very top of Hero Section: 100% Full Transparent Navbar (Only Mysore Silk Logo) */
 .headerTransparentTop {
   background: transparent !important;
   backdrop-filter: none !important;
@@ -31,29 +31,40 @@
 .headerTransparentTop .navMain {
   background: transparent !important;
   border: none !important;
+  justify-content: center;
 }
 
-.headerTransparentTop .navLink {
-  color: #0A0705 !important;
-  font-size: clamp(0.88rem, 1.1vw, 0.96rem) !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.14em !important;
-  text-shadow: none !important;
+.headerTransparentTop .navGroupLeft {
+  flex: 0 0 0px !important;
+  max-width: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  overflow: hidden !important;
+  transform: translateX(30px) scale(0.92) !important;
 }
 
-.headerTransparentTop .navLink:hover {
-  color: #7A161D !important;
+.headerTransparentTop .navGroupRight {
+  flex: 0 0 0px !important;
+  max-width: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  overflow: hidden !important;
+  transform: translateX(-30px) scale(0.92) !important;
+}
+
+.headerTransparentTop .brandGroupCenter {
+  padding: 0;
 }
 
 .headerTransparentTop .brandLogoImg {
+  height: 52px;
   filter: none !important;
 }
 
 .headerTransparentTop .mobileNavRibbon {
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  border: none !important;
+  display: none !important;
 }
 
 /* 2. Scrolling within the Hero Section: Subtle frosted parchment glass */
@@ -198,25 +209,32 @@
   filter: none;
 }
 
-/* Symmetrical Desktop Navigation Groups */
+/* Symmetrical Desktop Navigation Groups with Smooth Expand Animation */
 .navLinksList {
   display: flex;
   align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
+  transition: opacity 320ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+              max-width 360ms cubic-bezier(0.16, 1, 0.3, 1),
+              flex 360ms cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 320ms;
 }
 
 .navGroupLeft {
   flex: 1;
+  max-width: 600px;
   justify-content: flex-end;
-  gap: clamp(18px, 2.4vw, 42px);
+  gap: clamp(16px, 2.2vw, 36px);
 }
 
 .navGroupRight {
   flex: 1;
+  max-width: 600px;
   justify-content: flex-start;
-  gap: clamp(18px, 2.4vw, 42px);
+  gap: clamp(16px, 2.2vw, 36px);
 }
 
 .navLinkItem {
@@ -230,13 +248,13 @@
   flex-direction: column;
   align-items: center;
   font-family: var(--font-sans);
-  font-size: clamp(0.88rem, 1.1vw, 0.96rem);
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #0A0705;
+  color: #14100C;
   text-decoration: none;
-  padding: 8px 6px;
+  padding: 8px 4px;
   white-space: nowrap;
   transition: color 200ms ease, opacity 200ms ease;
 }
@@ -247,7 +265,7 @@
 
 .navLinkActive {
   color: #7A161D;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .activeDot {
@@ -255,8 +273,8 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 20px;
-  height: 2.5px;
+  width: 16px;
+  height: 2px;
   background-color: #7A161D;
   border-radius: 1px;
 }
