@@ -16,6 +16,7 @@ export interface Translations {
   navCollection: string;
   navInstitution: string;
   navStores: string;
+  navContact: string;
 
   // Hero Section
   heroKickerEn: string;
@@ -114,6 +115,7 @@ const TRANSLATIONS: Record<Language, Translations> = {
     navCollection: "COLLECTION",
     navInstitution: "INSTITUTION",
     navStores: "STORES",
+    navContact: "CONTACT",
 
     heroKickerEn: "A ROYAL HERITAGE · SINCE 1912",
     heroKickerKn: "ಕರ್ನಾಟಕ ಮೈಸೂರು ಸಿಲ್ಕ್ · ರಾಜಪರಂಪರೆಯ ಅಮರ ನೇಯ್ಗೆ",
@@ -202,6 +204,7 @@ const TRANSLATIONS: Record<Language, Translations> = {
     navCollection: "ಸಂಗ್ರಹ",
     navInstitution: "ಸಂಸ್ಥೆ",
     navStores: "ಮಳಿಗೆಗಳು",
+    navContact: "ಸಂಪರ್ಕ",
 
     heroKickerEn: "ರಾಜಪರಂಪರೆ · 1912 ರಿಂದ",
     heroKickerKn: "ಕರ್ನಾಟಕ ಮೈಸೂರು ಸಿಲ್ಕ್ · ರಾಜಪರಂಪರೆಯ ಅಮರ ನೇಯ್ಗೆ",

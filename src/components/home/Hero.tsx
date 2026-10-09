@@ -27,11 +27,13 @@ export const Hero: React.FC = () => {
           sizes="100vw"
           className={styles.heroBackgroundImage}
         />
+        {/* Ambient luminous scrim behind left editorial text for pristine legibility */}
+        <div className={styles.heroTextBackdropScrim} aria-hidden="true" />
         {/* Soft bottom transition into parchment section */}
         <div className={styles.bottomTransitionFade} aria-hidden="true" />
       </div>
 
-      {/* 2. Left Edge Traditional Indian Filigree & Scroll Indicator */}
+      {/* 2. Left Edge Traditional Indian Filigree Motif */}
       <aside className={styles.leftMarginOrnament} aria-hidden="true">
         {/* Top Paisley Motif */}
         <div className={styles.paisleyMotifWrap}>
@@ -88,18 +90,18 @@ export const Hero: React.FC = () => {
 
         {/* Vertical Accent Needle Node */}
         <div className={styles.filigreeDottedLine} />
-
-        {/* Bottom Left "SCROLL TO EXPLORE" Prompt */}
-        <div className={styles.scrollExploreBlock}>
-          <span className={styles.scrollExploreLine}>SCROLL</span>
-          <span className={styles.scrollExploreLine}>TO EXPLORE</span>
-          <div className={styles.scrollNeedleWrap}>
-            <span className={styles.needleNodeCircle} />
-            <span className={styles.needleLine} />
-            <span className={styles.needleNodeCircle} />
-          </div>
-        </div>
       </aside>
+
+      {/* 3. Bottom Pinned "SCROLL TO EXPLORE" Prompt (Separated at bottom, zero text overlap) */}
+      <div className={styles.scrollExploreBlock} aria-hidden="true">
+        <span className={styles.scrollExploreLine}>SCROLL</span>
+        <span className={styles.scrollExploreLine}>TO EXPLORE</span>
+        <div className={styles.scrollNeedleWrap}>
+          <span className={styles.needleNodeCircle} />
+          <span className={styles.needleLine} />
+          <span className={styles.needleNodeCircle} />
+        </div>
+      </div>
 
       {/* 3. Main Hero Editorial Content Overlay */}
       <div className={styles.heroInnerContainer}>

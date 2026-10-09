@@ -45,13 +45,19 @@ export const Header: React.FC = () => {
     };
   }, [isHome]);
 
-  const navItems = [
+  const navLeft = [
     { label: t.navHeritage, href: "/heritage" },
     { label: t.navCraft, href: "/craft" },
     { label: t.navCollection, href: "/collection" },
+  ];
+
+  const navRight = [
     { label: t.navInstitution, href: "/institution" },
     { label: t.navStores, href: "/stores" },
+    { label: t.navContact, href: "/contact" },
   ];
+
+  const allNavItems = [...navLeft, ...navRight];
 
   // Dynamic header state:
   // - In hero section at top: transparent
@@ -80,23 +86,41 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* 2. Primary Navigation Bar */}
+      {/* 2. Primary Navigation Bar with Centered Royal Brand Logo */}
       <nav className={styles.navMain} aria-label="Main Navigation">
-        {/* Left Brand Identity: Official KSIC Mysore Silk Seal */}
-        <Link href="/" className={styles.brandGroup} aria-label="KSIC Mysore Silk Home">
+        {/* Left Navigation Group */}
+        <ul className={`${styles.navLinksList} ${styles.navGroupLeft}`}>
+          {navLeft.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <li key={item.href} className={styles.navLinkItem}>
+                <Link
+                  href={item.href}
+                  className={`${styles.navLink} ${isActive ? styles.navLinkActive : ""}`}
+                >
+                  <span>{item.label}</span>
+                  {isActive && <span className={styles.activeDot} />}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+
+        {/* Center Brand Identity: Official KSIC Mysore Silk Seal */}
+        <Link href="/" className={styles.brandGroupCenter} aria-label="KSIC Mysore Silk Home">
           <Image
             src="/assets/brand/ksic-logo.png"
             alt="KSIC Mysore Silk Seal Estd 1912"
-            width={140}
-            height={38}
+            width={160}
+            height={44}
             priority
             className={styles.brandLogoImg}
           />
         </Link>
 
-        {/* Center Desktop Navigation Links */}
-        <ul className={styles.navLinksList}>
-          {navItems.map((item) => {
+        {/* Right Navigation Group */}
+        <ul className={`${styles.navLinksList} ${styles.navGroupRight}`}>
+          {navRight.map((item) => {
             const isActive = pathname === item.href;
             return (
               <li key={item.href} className={styles.navLinkItem}>
@@ -116,7 +140,7 @@ export const Header: React.FC = () => {
       {/* 3. Mobile Edge-to-Edge Navigation Ribbon (Always accessible, no menu click needed) */}
       <div className={styles.mobileNavRibbon} aria-label="Mobile Navigation">
         <div className={styles.mobileNavScroller}>
-          {navItems.map((item) => {
+          {allNavItems.map((item) => {
             const isActive = pathname === item.href;
             return (
               <Link

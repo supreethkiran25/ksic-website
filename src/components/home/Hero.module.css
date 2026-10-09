@@ -31,6 +31,20 @@
   will-change: transform;
 }
 
+/* Ambient luminous scrim behind left editorial text for pristine legibility */
+.heroTextBackdropScrim {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 62% 75% at 20% 50%,
+    rgba(255, 253, 248, 0.48) 0%,
+    rgba(255, 253, 248, 0.28) 45%,
+    transparent 85%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
 /* Subtle gentle transition at the bottom into the next parchment section */
 .bottomTransitionFade {
   position: absolute;
@@ -43,16 +57,17 @@
   z-index: 2;
 }
 
-/* 2. Left Edge Traditional Indian Filigree & Scroll Indicator */
+/* 2. Left Edge Traditional Indian Filigree Motif */
 .leftMarginOrnament {
   position: absolute;
-  left: clamp(16px, 3.2vw, 44px);
-  top: 52%;
+  left: clamp(16px, 2.5vw, 36px);
+  top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 4;
+  width: 28px;
   pointer-events: none;
   user-select: none;
   animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
@@ -86,58 +101,65 @@
   height: 28px;
   border-left: 1px dashed #A88B58;
   opacity: 0.65;
-  margin: 10px 0 16px;
+  margin: 10px 0 0;
 }
 
-/* Scroll To Explore Indicator at Left Bottom */
+/* 3. Bottom Pinned "SCROLL TO EXPLORE" Indicator (Guaranteed Zero Text Overlap) */
 .scrollExploreBlock {
+  position: absolute;
+  bottom: 32px;
+  left: clamp(28px, 3.5vw, 56px);
+  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3px;
-  margin-top: 14px;
+  pointer-events: none;
+  user-select: none;
+  animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s backwards;
 }
 
 .scrollExploreLine {
   font-family: var(--font-sans);
-  font-size: 0.62rem;
-  font-weight: 600;
+  font-size: 0.60rem;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #7D684C;
+  color: #382E25;
   line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 .scrollNeedleWrap {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 8px;
+  margin-top: 6px;
   gap: 2px;
 }
 
 .needleLine {
   width: 1.5px;
-  height: 24px;
-  background-color: #A88B58;
-  opacity: 0.85;
+  height: 22px;
+  background-color: #8C6F3D;
+  opacity: 0.9;
 }
 
 .needleNodeCircle {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: #A88B58;
+  background-color: #8C6F3D;
 }
 
-/* 3. Main Hero Editorial Content Overlay */
+/* 4. Main Hero Editorial Content Overlay */
 .heroInnerContainer {
   position: relative;
   z-index: 3;
   width: 100%;
   max-width: 1540px;
   margin: 0 auto;
-  padding: 136px clamp(72px, 8vw, 130px) 60px;
+  padding: 136px clamp(48px, 6vw, 100px) 70px clamp(96px, 9vw, 160px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -145,7 +167,7 @@
   box-sizing: border-box;
 }
 
-/* 4. Left Editorial Narrative Column */
+/* 5. Left Editorial Narrative Column */
 .leftEditorialBlock {
   max-width: 520px;
   width: 100%;
@@ -161,62 +183,63 @@
   flex-direction: column;
   gap: 4px;
   margin-bottom: 22px;
-  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
 }
 
 .kickerEnglish {
   font-family: var(--font-sans);
-  font-size: 0.74rem;
-  font-weight: 600;
+  font-size: 0.76rem;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #65594F;
+  color: #1A1410;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
 .kickerUnderline {
-  width: 32px;
-  height: 1.5px;
-  background-color: #997A44;
-  margin: 3px 0 2px;
+  width: 36px;
+  height: 2px;
+  background-color: #7A161D;
+  margin: 4px 0 3px;
 }
 
 .kickerKannada {
   font-family: var(--font-kannada);
-  font-size: 0.84rem;
-  font-weight: 500;
+  font-size: 0.92rem;
+  font-weight: 600;
   letter-spacing: 0.04em;
-  color: #87653C;
+  color: #6E1A24;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 /* Stately High-Fashion Display Headline: MYSORE SILK */
 .editorialTitle {
   font-family: var(--font-serif);
-  font-size: clamp(48px, 6.8vw, 92px);
+  font-size: clamp(52px, 7.2vw, 96px);
   font-weight: 400;
   line-height: 0.94;
   letter-spacing: 0.02em;
-  color: #171310;
+  color: #0E0A08;
   display: flex;
   flex-direction: column;
-  margin: 0 0 22px 0;
+  margin: 0 0 24px 0;
   text-transform: uppercase;
   word-break: break-word;
-  animation: heroFadeUp 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.28s backwards;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8), 0 2px 14px rgba(255, 255, 255, 0.5);
 }
 
 .titleLine {
   display: block;
 }
 
-/* 3-Beat Poetic Editorial Stanza */
+/* 3-Beat Poetic Editorial Stanza - Ultra Sharp High Contrast Legibility */
 .poeticStanza {
   font-family: var(--font-serif);
-  font-size: clamp(20px, 2.1vw, 26px);
-  font-weight: 400;
-  line-height: 1.45;
-  color: #29211C;
-  margin-bottom: 34px;
-  animation: heroFadeUp 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.55s backwards;
+  font-size: clamp(22px, 2.3vw, 29px);
+  font-weight: 500;
+  line-height: 1.5;
+  color: #120E0C;
+  margin-bottom: 36px;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 12px rgba(255, 255, 255, 0.8);
 }
 
 .poeticLine {
@@ -226,23 +249,23 @@
 /* Understated Quiet-Luxury Action Link */
 .actionContainer {
   margin-top: 2px;
-  animation: heroFadeUp 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.68s backwards;
 }
 
 .exploreLink {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
-  color: #1C1714;
+  color: #0E0A08;
   font-family: var(--font-sans);
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-size: 0.80rem;
+  font-weight: 700;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
-  border-bottom: 1.5px solid #1C1714;
-  padding-bottom: 4px;
-  transition: color 260ms ease, border-color 260ms ease;
+  border-bottom: 2px solid #0E0A08;
+  padding-bottom: 5px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  transition: color 240ms ease, border-color 240ms ease, transform 240ms ease;
 }
 
 .exploreText {
@@ -251,17 +274,18 @@
 
 .exploreArrow {
   transition: transform 260ms ease, color 260ms ease;
-  color: #1C1714;
+  color: #0E0A08;
 }
 
 .exploreLink:hover {
-  color: #8B2C24;
-  border-color: #8B2C24;
+  color: #7A161D;
+  border-color: #7A161D;
+  transform: translateX(3px);
 }
 
 .exploreLink:hover .exploreArrow {
-  transform: translateX(5px);
-  color: #8B2C24;
+  transform: translateX(4px);
+  color: #7A161D;
 }
 
 /* =========================================================================
@@ -270,15 +294,19 @@
 
 @media (max-width: 1200px) {
   .heroInnerContainer {
-    padding: 124px clamp(48px, 6vw, 90px) 50px;
+    padding: 124px clamp(32px, 5vw, 60px) 50px clamp(80px, 8vw, 120px);
   }
   .leftMarginOrnament {
-    left: 16px;
+    left: 14px;
+  }
+  .scrollExploreBlock {
+    left: 14px;
   }
 }
 
 @media (max-width: 900px) {
-  .leftMarginOrnament {
+  .leftMarginOrnament,
+  .scrollExploreBlock {
     display: none !important;
   }
 
@@ -291,39 +319,39 @@
     min-height: 100svh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    padding-top: 0;
-    padding-bottom: 24px;
+    padding: 0;
     box-sizing: border-box;
   }
 
   .heroInnerContainer {
     width: 100%;
-    min-height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    padding: 120px 16px 16px;
+    justify-content: center;
+    padding: 80px 16px 24px;
     box-sizing: border-box;
   }
 
   /* Floating Royal Cartouche */
   .leftEditorialBlock {
     width: 100%;
-    max-width: 440px;
+    max-width: 380px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: rgba(249, 245, 239, 0.95);
+    background: rgba(253, 250, 245, 0.97);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(135, 105, 59, 0.38);
+    border: 1px solid rgba(135, 105, 59, 0.40);
     box-shadow: 0 16px 44px rgba(20, 16, 13, 0.22), 0 2px 8px rgba(0, 0, 0, 0.08);
-    padding: 22px 20px 20px;
+    padding: 20px 18px 18px;
     border-radius: 2px;
     position: relative;
     box-sizing: border-box;
@@ -333,7 +361,7 @@
     content: "";
     position: absolute;
     inset: 4px;
-    border: 1px solid rgba(135, 105, 59, 0.18);
+    border: 1px solid rgba(135, 105, 59, 0.20);
     pointer-events: none;
     border-radius: 1px;
   }
@@ -348,7 +376,7 @@
   .kickerEnglish {
     font-size: 0.65rem;
     letter-spacing: 0.18em;
-    color: #5A4736;
+    color: #3A2F25;
     font-weight: 700;
   }
 
@@ -357,7 +385,7 @@
   }
 
   .kickerKannada {
-    font-size: 0.76rem;
+    font-size: 0.78rem;
     color: #7A161D;
     font-weight: 600;
   }
@@ -366,7 +394,7 @@
     font-size: clamp(30px, 8vw, 38px);
     line-height: 0.98;
     color: #110E0C;
-    margin: 0 0 10px 0;
+    margin: 0 0 8px 0;
     font-weight: 500;
     text-align: center;
     align-items: center;
@@ -380,12 +408,23 @@
     display: inline;
   }
 
+  .kickerGroup,
+  .editorialTitle,
+  .poeticStanza,
+  .actionContainer {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   .poeticStanza {
-    font-size: 0.92rem;
+    font-size: 0.94rem;
+    font-weight: 500;
     line-height: 1.48;
-    color: #2E251E;
-    margin-bottom: 16px;
+    color: #1A1410;
+    margin-bottom: 14px;
     text-align: center;
+    text-shadow: none;
   }
 
   .actionContainer {
@@ -411,6 +450,7 @@
     border-radius: 1px;
     transition: all 200ms ease;
     box-shadow: 0 4px 14px rgba(122, 22, 29, 0.25);
+    text-shadow: none;
   }
 
   .exploreLink:hover {
@@ -430,7 +470,7 @@
 
 @media (max-width: 480px) {
   .leftEditorialBlock {
-    padding: 18px 14px 18px;
+    padding: 16px 14px 14px;
     max-width: 100%;
   }
 
@@ -439,8 +479,8 @@
   }
 
   .poeticStanza {
-    font-size: 0.86rem;
-    margin-bottom: 14px;
+    font-size: 0.88rem;
+    margin-bottom: 12px;
   }
 
   .exploreLink {
