@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
   const { lang, t } = useLanguage();
 
   return (
-    <section className={styles.heroSection} aria-label="Official Karnataka Mysore Silk Heritage">
+    <section id="hero-section" className={styles.heroSection} aria-label="Official Karnataka Mysore Silk Heritage">
       {/* 1. Full-Bleed Luminous Background Image */}
       <div className={styles.heroBackground}>
         <Image

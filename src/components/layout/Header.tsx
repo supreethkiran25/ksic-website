@@ -9,18 +9,41 @@ import styles from "./Header.module.css";
 import { useLanguage } from "@/context/LanguageContext";
 
 export const Header: React.FC = () => {
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const isHome = pathname === "/";
+  const [isAtTop, setIsAtTop] = useState(true);
+  const [isInHero, setIsInHero] = useState(true);
   const { lang, setLang, t } = useLanguage();
 
   useEffect(() => {
+    if (!isHome) {
+      setIsInHero(false);
+      setIsAtTop(false);
+      return;
+    }
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const scrollY = window.scrollY;
+      setIsAtTop(scrollY <= 20);
+
+      const heroEl = document.getElementById("hero-section");
+      if (heroEl) {
+        const rect = heroEl.getBoundingClientRect();
+        // As long as the hero section bottom is > 90px from top, we are inside hero
+        setIsInHero(rect.bottom > 90);
+      } else {
+        setIsInHero(scrollY < window.innerHeight - 90);
+      }
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("resize", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [isHome]);
 
   const navItems = [
     { label: t.navHeritage, href: "/heritage" },
@@ -30,8 +53,16 @@ export const Header: React.FC = () => {
     { label: t.navStores, href: "/stores" },
   ];
 
+  // Dynamic header state:
+  // - In hero section at top: transparent
+  // - In hero section while scrolling: subtle frosted glass
+  // - Outside hero section or on inner pages: solid institutional parchment
+  const headerStateClass = isHome && isInHero
+    ? (isAtTop ? styles.headerTransparentTop : styles.headerTransparentScrolling)
+    : styles.headerScrolled;
+
   return (
-    <header className={`${styles.headerContainer} ${scrolled ? styles.headerScrolled : ""}`}>
+    <header className={`${styles.headerContainer} ${headerStateClass}`}>
       {/* 1. Official Institutional Top Credential Banner */}
       <div className={styles.topBadge}>
         <div className={styles.topBadgeWrap}>
