@@ -17,11 +17,11 @@ export const Hero: React.FC = () => {
       style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}
       aria-label="Official Karnataka Mysore Silk Heritage"
     >
-      {/* 1. Full-Bleed Luminous Background Image */}
+      {/* 1. Full-Bleed Background Image (Exact Turmeric Gold Mysore Silk Saree Overlooking Mysore Palace) */}
       <div className={styles.heroBackground} style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
         <Image
-          src="/assets/heritage/ksic-pastel-hero.jpg"
-          alt="Authentic Mysore Silk pure crepe saree draped over limestone plinth with Mysore Mallige jasmine flowers"
+          src="/assets/heritage/ksic-royal-turmeric-hero.jpg"
+          alt="Royal turmeric gold pure crepe Mysore Silk saree with authentic gold zari paisley border draped on travertine stone plinth overlooking Mysore Palace"
           fill
           priority
           sizes="100vw"
@@ -31,31 +31,90 @@ export const Hero: React.FC = () => {
         <div className={styles.bottomTransitionFade} aria-hidden="true" />
       </div>
 
-      {/* 2. Main Hero Editorial Content Overlay */}
-      <div className={styles.heroInnerContainer}>
-        {/* Left Editorial Narrative Block / Mobile Floating Royal Cartouche */}
-        <div className={styles.leftEditorialBlock}>
-          {/* Mobile-Only Royal Crest Crown Medallion */}
-          <div className={styles.mobileCrestCrown} aria-hidden="true">
-            <Image
-              src="/assets/brand/gandaberunda-crest.png"
-              alt="Official Royal Mysore Wadiyar Gandaberunda Emblem"
-              width={76}
-              height={55}
-              priority
-              className={styles.mobileCrestImg}
+      {/* 2. Left Edge Traditional Indian Filigree & Scroll Indicator */}
+      <aside className={styles.leftMarginOrnament} aria-hidden="true">
+        {/* Top Paisley Motif */}
+        <div className={styles.paisleyMotifWrap}>
+          <svg width="28" height="52" viewBox="0 0 28 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M14 2 C20 12 26 22 26 32 C26 42 21 50 14 50 C7 50 2 42 2 32 C2 22 8 12 14 2 Z"
+              stroke="#A88B58"
+              strokeWidth="1.1"
+              fill="none"
+              opacity="0.85"
             />
-          </div>
+            <path
+              d="M14 9 C18 16 21 24 21 32 C21 38 18 43 14 43 C10 43 7 38 7 32 C7 24 10 16 14 9 Z"
+              stroke="#A88B58"
+              strokeWidth="0.8"
+              fill="none"
+              opacity="0.65"
+            />
+            <circle cx="14" cy="32" r="2.5" fill="#A88B58" opacity="0.85" />
+            <circle cx="14" cy="2" r="1.5" fill="#A88B58" />
+            <circle cx="14" cy="50" r="1.5" fill="#A88B58" />
+          </svg>
+        </div>
 
+        {/* Vertical Dotted Hairline with delicate node rings */}
+        <div className={styles.filigreeConnector}>
+          <span className={styles.filigreeDot} />
+          <span className={styles.filigreeDot} />
+          <span className={styles.filigreeDot} />
+        </div>
+
+        {/* Bottom Paisley Motif */}
+        <div className={styles.paisleyMotifWrap}>
+          <svg width="28" height="52" viewBox="0 0 28 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M14 50 C20 40 26 30 26 20 C26 10 21 2 14 2 C7 2 2 10 2 20 C2 30 8 40 14 50 Z"
+              stroke="#A88B58"
+              strokeWidth="1.1"
+              fill="none"
+              opacity="0.85"
+            />
+            <path
+              d="M14 43 C18 36 21 28 21 20 C21 14 18 9 14 9 C10 9 7 14 7 20 C7 28 10 36 14 43 Z"
+              stroke="#A88B58"
+              strokeWidth="0.8"
+              fill="none"
+              opacity="0.65"
+            />
+            <circle cx="14" cy="20" r="2.5" fill="#A88B58" opacity="0.85" />
+            <circle cx="14" cy="50" r="1.5" fill="#A88B58" />
+            <circle cx="14" cy="2" r="1.5" fill="#A88B58" />
+          </svg>
+        </div>
+
+        {/* Vertical Accent Needle Node */}
+        <div className={styles.filigreeDottedLine} />
+
+        {/* Bottom Left "SCROLL TO EXPLORE" Prompt */}
+        <div className={styles.scrollExploreBlock}>
+          <span className={styles.scrollExploreLine}>SCROLL</span>
+          <span className={styles.scrollExploreLine}>TO EXPLORE</span>
+          <div className={styles.scrollNeedleWrap}>
+            <span className={styles.needleNodeCircle} />
+            <span className={styles.needleLine} />
+            <span className={styles.needleNodeCircle} />
+          </div>
+        </div>
+      </aside>
+
+      {/* 3. Main Hero Editorial Content Overlay */}
+      <div className={styles.heroInnerContainer}>
+        {/* Left Editorial Narrative Block */}
+        <div className={styles.leftEditorialBlock}>
           {/* Top Heritage Kicker */}
           <div className={styles.kickerGroup}>
             <span className={styles.kickerEnglish}>
               {lang === "kn" ? "ರಾಜಪರಂಪರೆ · 1912 ರಿಂದ" : t.heroKickerEn}
             </span>
+            <div className={styles.kickerUnderline} aria-hidden="true" />
             <span className={styles.kickerKannada}>{t.heroKickerKn}</span>
           </div>
 
-          {/* Stately High-Fashion Display Headline */}
+          {/* Stately High-Fashion Display Headline: MYSORE SILK */}
           <h1 className={styles.editorialTitle}>
             {lang === "kn" ? (
               <span className={styles.titleLine}>ಮೈಸೂರು ಸಿಲ್ಕ್</span>
@@ -67,78 +126,40 @@ export const Hero: React.FC = () => {
             )}
           </h1>
 
-          {/* Rich Crimson Zari-Matched Accent Line */}
-          <div className={styles.crimsonAccentRule} aria-hidden="true" />
-
-          {/* 3-Beat Poetic Editorial Stanza */}
+          {/* 3-Beat Poetic Editorial Stanza Matching Reference Mockup */}
           <div className={styles.poeticStanza}>
-            <p className={styles.poeticLine}>{t.heroPoetic1}</p>
-            <p className={styles.poeticLine}>{t.heroPoetic2}</p>
-            <p className={styles.poeticLine}>{t.heroPoetic3}</p>
+            <p className={styles.poeticLine}>{lang === "kn" ? "ಶುದ್ಧ ರೇಷ್ಮೆ." : "Pure silk."}</p>
+            <p className={styles.poeticLine}>{lang === "kn" ? "ಮೈಸೂರಿನಲ್ಲಿ ನೇಯ್ದದ್ದು." : "Woven in Mysuru."}</p>
+            <p className={styles.poeticLine}>{lang === "kn" ? "ಪೀಳಿಗೆಗಳಿಂದ." : "For generations."}</p>
           </div>
 
-          {/* Understated Quiet-Luxury Action Link */}
+          {/* Understated Quiet-Luxury Action Link With Full Underline */}
           <div className={styles.actionContainer}>
             <Link href="/collection" className={styles.exploreLink}>
-              <span className={styles.exploreText}>{t.heroExploreBtn}</span>
-              <ArrowRight size={14} className={styles.exploreArrow} />
+              <span className={styles.exploreText}>
+                {lang === "kn" ? "ಸಂಗ್ರಹವನ್ನು ಅನ್ವೇಷಿಸಿ" : "EXPLORE COLLECTION"}
+              </span>
+              <ArrowRight size={15} className={styles.exploreArrow} />
             </Link>
           </div>
         </div>
 
-        {/* Right Royal Insignia Plaque (Authentic Mysore Wadiyar Ganda Berunda Vector Crest) */}
-        <div className={styles.rightInsigniaBlock}>
-          {/* Framed Medallion with vertical accent hairline */}
-          <div className={styles.medallionFrame}>
-            <div className={styles.verticalHairline} aria-hidden="true">
-              <span className={styles.hairlineDiamond} />
-            </div>
-
-            <div className={styles.medallionBody}>
-              <div className={styles.crestWrap}>
-                <Image
-                  src="/assets/brand/gandaberunda-crest.png"
-                  alt="Official Royal Mysore Wadiyar Gandaberunda Emblem"
-                  width={140}
-                  height={102}
-                  priority
-                  className={styles.crestImg}
-                />
-              </div>
-
-              <div className={styles.medallionLabels}>
-                <span className={styles.gandaTitle}>{t.gandaberundaTitle}</span>
-                <span className={styles.gandaSubtitle}>{t.gandaberundaSubtitle}</span>
-              </div>
-            </div>
+        {/* Right Stone Wall Carving Label (Gandaberunda Royal Medallion) */}
+        <div className={styles.rightWallEtchingBlock} aria-hidden="true">
+          <div className={styles.etchingCrestWrap}>
+            <Image
+              src="/assets/brand/gandaberunda-crest.png"
+              alt="Official Royal Mysore Wadiyar Gandaberunda Emblem"
+              width={130}
+              height={94}
+              priority
+              className={styles.etchingCrestImg}
+            />
           </div>
-
-          {/* Far Right Edge Vertical Kannada & Loom Needle Accent */}
-          <aside className={styles.farRightEdge} aria-hidden="true">
-            <div className={styles.verticalKannadaChars}>
-              <span>ಕ</span>
-              <span>ರ್ನಾ</span>
-              <span>ಟ</span>
-              <span>ಕ</span>
-            </div>
-            <div className={styles.loomNeedleOrnament}>
-              <svg width="10" height="56" viewBox="0 0 10 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="5" y1="0" x2="5" y2="40" stroke="#7A664E" strokeWidth="1" strokeDasharray="3 3" />
-                <polygon points="5,48 2,40 8,40" fill="#7A664E" />
-                <circle cx="5" cy="52" r="1.5" fill="#7A664E" />
-              </svg>
-            </div>
-          </aside>
-        </div>
-      </div>
-
-      {/* Editorial Scroll Prompt Indicator */}
-      <div className={styles.scrollPrompt} aria-hidden="true">
-        <span className={styles.scrollPromptText}>
-          {lang === "kn" ? "ಅನ್ವೇಷಿಸಲು ಕೆಳಗೆ ಸ್ಕ್ರೋಲ್ ಮಾಡಿ" : "SCROLL TO DISCOVER"}
-        </span>
-        <div className={styles.scrollTrack}>
-          <div className={styles.scrollBar} />
+          <div className={styles.etchingTextGroup}>
+            <span className={styles.etchingTitle}>{t.gandaberundaTitle}</span>
+            <span className={styles.etchingSubtitle}>{t.gandaberundaSubtitle}</span>
+          </div>
         </div>
       </div>
     </section>

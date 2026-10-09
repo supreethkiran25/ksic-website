@@ -11,7 +11,7 @@
   box-sizing: border-box;
 }
 
-/* 1. Full-Bleed Background Image (Exact Ivory Mysore Silk Drape on Plinth with Jasmine) */
+/* 1. Full-Bleed Luminous Background Image */
 .heroBackground {
   position: absolute;
   inset: 0;
@@ -25,7 +25,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center 30%;
   filter: brightness(1) contrast(1.02);
   animation: heroBgSettle 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: transform;
@@ -43,14 +43,101 @@
   z-index: 2;
 }
 
-/* 2. Main Hero Editorial Content Overlay */
+/* 2. Left Edge Traditional Indian Filigree & Scroll Indicator */
+.leftMarginOrnament {
+  position: absolute;
+  left: clamp(16px, 3.2vw, 44px);
+  top: 52%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 4;
+  pointer-events: none;
+  user-select: none;
+  animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+}
+
+.paisleyMotifWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0 1px 3px rgba(135, 105, 59, 0.2));
+}
+
+.filigreeConnector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.filigreeDot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #A88B58;
+  opacity: 0.85;
+}
+
+.filigreeDottedLine {
+  width: 1px;
+  height: 28px;
+  border-left: 1px dashed #A88B58;
+  opacity: 0.65;
+  margin: 10px 0 16px;
+}
+
+/* Scroll To Explore Indicator at Left Bottom */
+.scrollExploreBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  margin-top: 14px;
+}
+
+.scrollExploreLine {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7D684C;
+  line-height: 1.2;
+}
+
+.scrollNeedleWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+  gap: 2px;
+}
+
+.needleLine {
+  width: 1.5px;
+  height: 24px;
+  background-color: #A88B58;
+  opacity: 0.85;
+}
+
+.needleNodeCircle {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #A88B58;
+}
+
+/* 3. Main Hero Editorial Content Overlay */
 .heroInnerContainer {
   position: relative;
   z-index: 3;
   width: 100%;
   max-width: 1540px;
   margin: 0 auto;
-  padding: 136px clamp(16px, 5.5vw, 84px) 60px;
+  padding: 136px clamp(72px, 8vw, 130px) 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,12 +145,7 @@
   box-sizing: border-box;
 }
 
-/* Mobile-Only Royal Crest Crown (hidden on desktop) */
-.mobileCrestCrown {
-  display: none;
-}
-
-/* 3. Left Editorial Narrative Column */
+/* 4. Left Editorial Narrative Column */
 .leftEditorialBlock {
   max-width: 520px;
   width: 100%;
@@ -77,7 +159,7 @@
 .kickerGroup {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   margin-bottom: 22px;
   animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
 }
@@ -91,6 +173,13 @@
   color: #65594F;
 }
 
+.kickerUnderline {
+  width: 32px;
+  height: 1.5px;
+  background-color: #997A44;
+  margin: 3px 0 2px;
+}
+
 .kickerKannada {
   font-family: var(--font-kannada);
   font-size: 0.84rem;
@@ -102,14 +191,14 @@
 /* Stately High-Fashion Display Headline: MYSORE SILK */
 .editorialTitle {
   font-family: var(--font-serif);
-  font-size: clamp(42px, 6.4vw, 86px);
-  font-weight: 500;
-  line-height: 0.95;
+  font-size: clamp(48px, 6.8vw, 92px);
+  font-weight: 400;
+  line-height: 0.94;
   letter-spacing: 0.02em;
   color: #171310;
   display: flex;
   flex-direction: column;
-  margin: 0 0 20px 0;
+  margin: 0 0 22px 0;
   text-transform: uppercase;
   word-break: break-word;
   animation: heroFadeUp 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.28s backwards;
@@ -119,24 +208,14 @@
   display: block;
 }
 
-/* Rich Crimson Zari-Matched Accent Line */
-.crimsonAccentRule {
-  width: 46px;
-  height: 3px;
-  background-color: #8B2C24;
-  margin-bottom: 24px;
-  border-radius: 1px;
-  animation: heroAccentExpand 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s backwards;
-}
-
 /* 3-Beat Poetic Editorial Stanza */
 .poeticStanza {
   font-family: var(--font-serif);
-  font-size: clamp(19px, 2vw, 24px);
+  font-size: clamp(20px, 2.1vw, 26px);
   font-weight: 400;
   line-height: 1.45;
   color: #29211C;
-  margin-bottom: 32px;
+  margin-bottom: 34px;
   animation: heroFadeUp 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.55s backwards;
 }
 
@@ -185,80 +264,49 @@
   color: #8B2C24;
 }
 
-/* 4. Right Royal Insignia Medallion (Accurate Vector Ganda Berunda) */
-.rightInsigniaBlock {
+/* 5. Right Wall Carving / Emblem Block */
+.rightWallEtchingBlock {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 28px;
-  margin-right: 6px;
+  text-align: center;
+  gap: 14px;
+  margin-right: clamp(10px, 3.5vw, 48px);
   user-select: none;
   flex-shrink: 0;
   animation: heroCrestFloat 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s backwards;
 }
 
-.medallionFrame {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-/* Vertical Hairline with diamond node */
-.verticalHairline {
-  position: relative;
-  width: 1px;
-  height: 160px;
-  background: rgba(135, 105, 59, 0.42);
+.etchingCrestWrap {
+  width: 130px;
+  height: 96px;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0.82;
+  filter: drop-shadow(0 4px 12px rgba(125, 96, 50, 0.22));
+  transition: transform 400ms ease, opacity 400ms ease;
 }
 
-.hairlineDiamond {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%) rotate(45deg);
-  width: 6px;
-  height: 6px;
-  background-color: #87693B;
-}
-
-.medallionBody {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  animation: crestGentleBreathe 6s ease-in-out 1.5s infinite;
-}
-
-.crestWrap {
-  width: 140px;
-  height: 122px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 6px 14px rgba(125, 96, 50, 0.25));
-  transition: transform 400ms ease;
-}
-
-.crestWrap:hover {
+.etchingCrestWrap:hover {
   transform: scale(1.04);
+  opacity: 1;
 }
 
-.crestImg {
+.etchingCrestImg {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.medallionLabels {
+.etchingTextGroup {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 14px;
   gap: 4px;
 }
 
-.gandaTitle {
+.etchingTitle {
   font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 700;
@@ -267,7 +315,7 @@
   color: #4A3C2A;
 }
 
-.gandaSubtitle {
+.etchingSubtitle {
   font-family: var(--font-sans);
   font-size: 0.62rem;
   font-weight: 600;
@@ -276,49 +324,30 @@
   color: #7B6852;
 }
 
-/* 5. Extreme Far-Right Edge Vertical Kannada & Loom Needle Accent */
-.farRightEdge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  margin-left: 8px;
-}
+/* =========================================================================
+   STRICT RESPONSIVE BREAKPOINTS
+   ========================================================================= */
 
-.verticalKannadaChars {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-kannada);
-  font-size: 0.84rem;
-  font-weight: 600;
-  color: #6E5B47;
-  letter-spacing: 0.06em;
-}
-
-.loomNeedleOrnament {
-  display: flex;
-  justify-content: center;
-}
-
-/* Strict Mobile & Tablet Edge-to-Edge Responsiveness */
-@media (max-width: 1180px) {
+@media (max-width: 1200px) {
   .heroInnerContainer {
-    padding: 120px 24px 50px;
+    padding: 124px clamp(48px, 6vw, 90px) 50px;
   }
-  .rightInsigniaBlock {
-    gap: 20px;
-  }
-  .crestWrap {
-    width: 120px;
-    height: 104px;
+  .leftMarginOrnament {
+    left: 16px;
   }
 }
 
 @media (max-width: 900px) {
+  .leftMarginOrnament {
+    display: none !important;
+  }
+
+  .rightWallEtchingBlock {
+    display: none !important;
+  }
+
   .heroBackgroundImage {
-    object-position: center 12%;
+    object-position: center 20%;
   }
 
   .heroSection {
@@ -344,12 +373,7 @@
     box-sizing: border-box;
   }
 
-  /* Desktop insignia plaque is hidden on mobile (crest crowns the cartouche) */
-  .rightInsigniaBlock {
-    display: none !important;
-  }
-
-  /* The Floating Royal Cartouche */
+  /* Floating Royal Cartouche */
   .leftEditorialBlock {
     width: 100%;
     max-width: 440px;
@@ -369,7 +393,6 @@
     box-sizing: border-box;
   }
 
-  /* Inner regal gold hairline border */
   .leftEditorialBlock::before {
     content: "";
     position: absolute;
@@ -377,21 +400,6 @@
     border: 1px solid rgba(135, 105, 59, 0.18);
     pointer-events: none;
     border-radius: 1px;
-  }
-
-  /* Royal Crest Medallion crowning the cartouche */
-  .mobileCrestCrown {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 8px;
-    filter: drop-shadow(0 2px 6px rgba(125, 96, 50, 0.18));
-  }
-
-  .mobileCrestImg {
-    width: 68px;
-    height: 48px;
-    object-fit: contain;
   }
 
   .kickerGroup {
@@ -406,6 +414,10 @@
     letter-spacing: 0.18em;
     color: #5A4736;
     font-weight: 700;
+  }
+
+  .kickerUnderline {
+    margin: 2px auto;
   }
 
   .kickerKannada {
@@ -430,13 +442,6 @@
 
   .titleLine {
     display: inline;
-  }
-
-  .crimsonAccentRule {
-    width: 36px;
-    height: 2px;
-    background-color: #8B2C24;
-    margin: 0 auto 10px;
   }
 
   .poeticStanza {
@@ -493,11 +498,6 @@
     max-width: 100%;
   }
 
-  .mobileCrestImg {
-    width: 60px;
-    height: 42px;
-  }
-
   .editorialTitle {
     font-size: 28px;
   }
@@ -513,70 +513,27 @@
   }
 }
 
-/* 5. Editorial Scroll Prompt */
-.scrollPrompt {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  z-index: 4;
-  opacity: 0.85;
-  transition: opacity 300ms ease;
-  pointer-events: none;
-  animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.9s backwards;
-}
-
-.scrollPromptText {
-  font-family: var(--font-sans);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #7A664E;
-}
-
-.scrollTrack {
-  width: 1.5px;
-  height: 28px;
-  background: rgba(122, 102, 78, 0.25);
-  position: relative;
-  overflow: hidden;
-  border-radius: 1px;
-}
-
-.scrollBar {
-  width: 100%;
-  height: 10px;
-  background: #8B2C24;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 1px;
-  animation: scrollPulse 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
-}
-
-@media (max-width: 768px) {
-  .scrollPrompt {
-    display: none;
-  }
-}
-
 /* =========================================================================
-   KEYFRAME ENTRANCE ANIMATIONS
+   KEYFRAME ANIMATIONS
    ========================================================================= */
 
 @keyframes heroBgSettle {
   0% {
-    transform: scale(1.05);
-    filter: brightness(0.95) contrast(1.04);
+    transform: scale(1.04);
+    filter: brightness(0.96) contrast(1.04);
   }
   100% {
     transform: scale(1);
     filter: brightness(1) contrast(1.02);
+  }
+}
+
+@keyframes heroFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -591,17 +548,6 @@
   }
 }
 
-@keyframes heroAccentExpand {
-  0% {
-    width: 0;
-    opacity: 0;
-  }
-  100% {
-    width: 46px;
-    opacity: 1;
-  }
-}
-
 @keyframes heroCrestFloat {
   0% {
     opacity: 0;
@@ -610,31 +556,5 @@
   100% {
     opacity: 1;
     transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes crestGentleBreathe {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
-}
-
-@keyframes scrollPulse {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(280%);
-    opacity: 0;
   }
 }
