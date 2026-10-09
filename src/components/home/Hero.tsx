@@ -146,16 +146,6 @@ export const Hero: React.FC = () => {
 
         {/* Right Stone Wall Carving Label (Gandaberunda Royal Medallion) */}
         <div className={styles.rightWallEtchingBlock} aria-hidden="true">
-          <div className={styles.etchingCrestWrap}>
-            <Image
-              src="/assets/brand/gandaberunda-crest.png"
-              alt="Official Royal Mysore Wadiyar Gandaberunda Emblem"
-              width={130}
-              height={94}
-              priority
-              className={styles.etchingCrestImg}
-            />
-          </div>
           <div className={styles.etchingTextGroup}>
             <span className={styles.etchingTitle}>{t.gandaberundaTitle}</span>
             <span className={styles.etchingSubtitle}>{t.gandaberundaSubtitle}</span>
