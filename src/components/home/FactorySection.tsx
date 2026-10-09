@@ -12,8 +12,13 @@ export const FactorySection: React.FC = () => {
   const { lang, t } = useLanguage();
 
   return (
-    <section className={styles.factorySection} id="factory" aria-label="Mysore Silk Weaving Factory">
-      <div className={styles.factoryBgWrap}>
+    <section
+      className={styles.factorySection}
+      id="factory"
+      style={{ position: "relative", minHeight: "80vh", overflow: "hidden" }}
+      aria-label="Mysore Silk Weaving Factory"
+    >
+      <div className={styles.factoryBgWrap} style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
         <Image
           src="/assets/factory/ksic-power-loom.jpg"
           alt="KSIC Mysore Silk Weaving Factory active Swiss power looms on Mananthody Road"

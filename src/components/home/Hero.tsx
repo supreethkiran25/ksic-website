@@ -11,9 +11,14 @@ export const Hero: React.FC = () => {
   const { lang, t } = useLanguage();
 
   return (
-    <section id="hero-section" className={styles.heroSection} aria-label="Official Karnataka Mysore Silk Heritage">
+    <section
+      id="hero-section"
+      className={styles.heroSection}
+      style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}
+      aria-label="Official Karnataka Mysore Silk Heritage"
+    >
       {/* 1. Full-Bleed Luminous Background Image */}
-      <div className={styles.heroBackground}>
+      <div className={styles.heroBackground} style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
         <Image
           src="/assets/heritage/ksic-pastel-hero.jpg"
           alt="Authentic Mysore Silk pure crepe saree draped over limestone plinth with Mysore Mallige jasmine flowers"
