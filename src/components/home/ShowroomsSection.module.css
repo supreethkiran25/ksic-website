@@ -15,17 +15,17 @@
 .headline {
   font-family: var(--font-serif);
   font-size: clamp(2.4rem, 4.8vw, 4.2rem);
-  font-weight: 300;
+  font-weight: 600;
   line-height: 1.08;
-  color: var(--color-text-primary);
+  color: #110E0C;
   margin-top: 8px;
 }
 
 .subtitle {
   font-family: var(--font-serif);
   font-size: clamp(1.15rem, 1.8vw, 1.5rem);
-  font-style: italic;
-  color: var(--color-text-secondary);
+  font-weight: 500;
+  color: #1A1410;
   margin-top: 4px;
 }
 
@@ -45,19 +45,19 @@
 .cityTabBtn {
   padding: 10px 20px;
   background-color: transparent;
-  border: 1px solid rgba(23, 21, 19, 0.15);
+  border: 1px solid rgba(23, 21, 19, 0.22);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: #1A1410;
   transition: all 200ms ease;
   white-space: nowrap;
 }
 
 .cityTabBtn:hover {
-  border-color: var(--color-text-primary);
-  color: var(--color-text-primary);
+  border-color: var(--color-burgundy);
+  color: var(--color-burgundy);
 }
 
 .cityTabBtnActive {
@@ -101,27 +101,27 @@
 }
 
 .storeType {
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: #7A161D;
   margin-bottom: 8px;
 }
 
 .storeName {
   font-family: var(--font-serif);
   font-size: 1.45rem;
-  font-weight: 500;
-  color: var(--color-text-primary);
+  font-weight: 600;
+  color: #110E0C;
   line-height: 1.25;
   margin-bottom: 12px;
 }
 
 .storeAddress {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--color-text-secondary);
+  color: #1A1410;
   margin-bottom: 16px;
 }
 
@@ -131,8 +131,9 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  font-size: 0.82rem;
-  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #1A1410;
 }
 
 .metaRow {

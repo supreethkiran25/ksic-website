@@ -30,17 +30,17 @@
 .certBadgeNumber {
   font-family: var(--font-serif);
   font-size: clamp(2.4rem, 5vw, 4.2rem);
-  font-weight: 400;
+  font-weight: 600;
   color: var(--color-burgundy);
   line-height: 1;
 }
 
 .certBadgeLabel {
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: #6E5325;
   margin-top: 6px;
 }
 
@@ -60,9 +60,9 @@
 .headline {
   font-family: var(--font-serif);
   font-size: clamp(2.2rem, 4.2vw, 3.4rem);
-  font-weight: 300;
+  font-weight: 600;
   line-height: 1.1;
-  color: var(--color-text-primary);
+  color: #110E0C;
   margin-bottom: 20px;
 }
 
@@ -94,14 +94,14 @@
 
 .pillarTitle {
   font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--color-text-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #110E0C;
 }
 
 .pillarDesc {
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  color: #1A1410;
   line-height: 1.6;
   margin-top: 2px;
 }

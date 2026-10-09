@@ -21,9 +21,9 @@
 .sectionTitle {
   font-family: var(--font-serif);
   font-size: clamp(2.2rem, 4.4vw, 3.6rem);
-  font-weight: 300;
+  font-weight: 600;
   line-height: 1.1;
-  color: var(--color-text-primary);
+  color: #110E0C;
   margin-top: 8px;
 }
 
@@ -103,7 +103,7 @@
   font-family: var(--font-serif);
   font-size: clamp(3.2rem, 7vw, 5.5rem);
   color: var(--color-burgundy);
-  font-weight: 300;
+  font-weight: 600;
   line-height: 0.9;
   margin-bottom: 16px;
 }
@@ -111,16 +111,16 @@
 .cardTitle {
   font-family: var(--font-serif);
   font-size: clamp(1.7rem, 2.6vw, 2.4rem);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.2;
-  color: var(--color-text-primary);
+  color: #110E0C;
   margin-bottom: 18px;
 }
 
 .cardDescription {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: var(--color-text-secondary);
+  color: #1A1410;
   margin-bottom: 24px;
 }
 

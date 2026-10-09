@@ -64,7 +64,7 @@
 .brandLegalName {
   font-family: var(--font-serif);
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.25;
   color: var(--color-text-light);
   letter-spacing: -0.01em;

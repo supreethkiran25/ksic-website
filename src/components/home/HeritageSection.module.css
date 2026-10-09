@@ -70,7 +70,7 @@
 .yearDisplay {
   font-family: var(--font-serif);
   font-size: clamp(4.5rem, 9.5vw, 8.5rem);
-  font-weight: 300;
+  font-weight: 600;
   line-height: 0.9;
   letter-spacing: -0.03em;
   color: var(--color-burgundy);
@@ -80,28 +80,29 @@
 .headline {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 3.8vw, 3.2rem);
-  font-weight: 300;
+  font-weight: 600;
   line-height: 1.12;
-  letter-spacing: -0.02em;
-  color: var(--color-text-primary);
+  letter-spacing: -0.015em;
+  color: #110E0C;
   margin-bottom: 24px;
 }
 
 .paragraph {
   font-size: 1.08rem;
   line-height: 1.75;
-  color: var(--color-text-secondary);
+  color: #1A1410;
   margin-bottom: 20px;
 }
 
 .paragraphHighlight {
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.7;
-  color: var(--color-text-primary);
+  color: #110E0C;
   padding-left: 20px;
   border-left: 2px solid var(--color-gold);
   margin-bottom: 36px;
   font-style: italic;
+  font-weight: 600;
   font-family: var(--font-serif);
 }
 

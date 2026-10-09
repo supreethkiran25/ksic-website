@@ -15,17 +15,17 @@
 .headline {
   font-family: var(--font-serif);
   font-size: clamp(2.4rem, 4.8vw, 4.2rem);
-  font-weight: 300;
+  font-weight: 600;
   line-height: 1.08;
-  color: var(--color-text-primary);
+  color: #110E0C;
   margin-top: 8px;
 }
 
 .subtitle {
   font-family: var(--font-serif);
   font-size: clamp(1.15rem, 1.8vw, 1.5rem);
-  font-style: italic;
-  color: var(--color-text-secondary);
+  font-weight: 500;
+  color: #1A1410;
   margin-top: 4px;
 }
 
@@ -99,8 +99,8 @@
 .featureTitleLarge {
   font-family: var(--font-serif);
   font-size: clamp(1.8rem, 3.2vw, 2.5rem);
-  font-weight: 400;
-  color: var(--color-text-primary);
+  font-weight: 600;
+  color: #110E0C;
   line-height: 1.18;
   margin-bottom: 12px;
 }
@@ -108,7 +108,7 @@
 .featureDesc {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: var(--color-text-secondary);
+  color: #1A1410;
   margin-bottom: 24px;
 }
 
@@ -191,16 +191,16 @@
 .stackTitle {
   font-family: var(--font-serif);
   font-size: 1.35rem;
-  font-weight: 500;
-  color: var(--color-text-primary);
+  font-weight: 600;
+  color: #110E0C;
   line-height: 1.25;
   margin-bottom: 8px;
 }
 
 .stackDesc {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--color-text-secondary);
+  color: #1A1410;
   margin-bottom: 16px;
 }
 
@@ -256,16 +256,16 @@
 .miniTitle {
   font-family: var(--font-serif);
   font-size: 1.35rem;
-  font-weight: 500;
-  color: var(--color-text-primary);
+  font-weight: 600;
+  color: #110E0C;
   line-height: 1.25;
   margin-top: 6px;
   margin-bottom: 10px;
 }
 
 .miniDesc {
-  font-size: 0.92rem;
-  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  color: #1A1410;
   line-height: 1.6;
   margin-bottom: 20px;
 }

@@ -22,10 +22,16 @@ export interface Translations {
   heroKickerEn: string;
   heroKickerKn: string;
   heroTitleMain: string;
+  heroTagline: string;
+  heroDesc: string;
   heroPoetic1: string;
   heroPoetic2: string;
   heroPoetic3: string;
   heroExploreBtn: string;
+  heroBadge1: string;
+  heroBadge2: string;
+  heroBadge3: string;
+  heroScroll: string;
   gandaberundaTitle: string;
   gandaberundaSubtitle: string;
 
@@ -120,10 +126,16 @@ const TRANSLATIONS: Record<Language, Translations> = {
     heroKickerEn: "A ROYAL HERITAGE · SINCE 1912",
     heroKickerKn: "ಕರ್ನಾಟಕ ಮೈಸೂರು ಸಿಲ್ಕ್ · ರಾಜಪರಂಪರೆಯ ಅಮರ ನೇಯ್ಗೆ",
     heroTitleMain: "MYSORE SILK",
+    heroTagline: "Woven with a legacy that lives on.",
+    heroDesc: "Pure silk. Crafted with gold zari. A tradition of over 100 years.",
     heroPoetic1: "Pure silk.",
-    heroPoetic2: "Woven in Mysore.",
+    heroPoetic2: "Woven in Mysuru.",
     heroPoetic3: "For generations.",
     heroExploreBtn: "EXPLORE COLLECTION",
+    heroBadge1: "100+ YEARS OF HERITAGE",
+    heroBadge2: "GI CERTIFIED MYSORE SILK",
+    heroBadge3: "PURE SILK PURE ZARI",
+    heroScroll: "SCROLL",
     gandaberundaTitle: "GANDA BERUNDA",
     gandaberundaSubtitle: "A SYMBOL OF ROYALTY",
 
@@ -209,10 +221,16 @@ const TRANSLATIONS: Record<Language, Translations> = {
     heroKickerEn: "ರಾಜಪರಂಪರೆ · 1912 ರಿಂದ",
     heroKickerKn: "ಕರ್ನಾಟಕ ಮೈಸೂರು ಸಿಲ್ಕ್ · ರಾಜಪರಂಪರೆಯ ಅಮರ ನೇಯ್ಗೆ",
     heroTitleMain: "ಮೈಸೂರು ಸಿಲ್ಕ್",
+    heroTagline: "ಪರಂಪರೆಯೊಂದಿಗೆ ಹೆಣೆದ ಶಾಶ್ವತ ಸೌಂದರ್ಯ.",
+    heroDesc: "ಶುದ್ಧ ರೇಷ್ಮೆ. ಚಿನ್ನದ ಜರಿಯಿಂದ ನೇಯ್ದದ್ದು. 100 ವರ್ಷಗಳಿಗೂ ಹೆಚ್ಚಿನ ಪರಂಪರೆ.",
     heroPoetic1: "ಶುದ್ಧ ನೈಸರ್ಗಿಕ ರೇಷ್ಮೆ.",
     heroPoetic2: "ಮೈಸೂರಿನಲ್ಲಿ ನೇಯ್ದದ್ದು.",
     heroPoetic3: "ತಲೆಮಾರುಗಳ ಪರಂಪರೆ.",
-    heroExploreBtn: "ಸಂಗ್ರಹ ವೀಕ್ಷಿಸಿ",
+    heroExploreBtn: "ಸಂಗ್ರಹವನ್ನು ಅನ್ವೇಷಿಸಿ",
+    heroBadge1: "100+ ವರ್ಷಗಳ ರಾಜ ಪರಂಪರೆ",
+    heroBadge2: "ಭೌಗೋಳಿಕ ಮಾನ್ಯತೆ GI-11",
+    heroBadge3: "ಶುದ್ಧ ರೇಷ್ಮೆ ಶುದ್ಧ ಜರಿ",
+    heroScroll: "ಸ್ಕ್ರೋಲ್",
     gandaberundaTitle: "ಗಂಡಭೇರುಂಡ",
     gandaberundaSubtitle: "ರಾಜಪರಂಪರೆಯ ಅಮರ ಲಾಂಛನ",
 

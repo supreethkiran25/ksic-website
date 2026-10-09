@@ -24,9 +24,9 @@
 .headline {
   font-family: var(--font-serif);
   font-size: clamp(2.2rem, 4.4vw, 3.8rem);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.08;
-  color: var(--color-text-primary);
+  color: #110E0C;
   margin-top: 8px;
   margin-bottom: 20px;
 }
@@ -34,7 +34,7 @@
 .leadParagraph {
   font-size: 1.05rem;
   line-height: 1.75;
-  color: var(--color-text-secondary);
+  color: #1A1410;
   margin-bottom: 32px;
 }
 
@@ -78,14 +78,15 @@
 .hubName {
   font-family: var(--font-serif);
   font-size: 1.35rem;
-  font-weight: 500;
-  color: var(--color-text-primary);
+  font-weight: 600;
+  color: #110E0C;
 }
 
 .hubKannada {
   font-family: var(--font-kannada);
-  font-size: 0.78rem;
-  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #3A2C20;
   margin-top: 2px;
 }
 
@@ -102,8 +103,8 @@
 }
 
 .hubDescription {
-  font-size: 0.88rem;
-  color: var(--color-text-secondary);
+  font-size: 0.92rem;
+  color: #1A1410;
   line-height: 1.6;
 }
 
@@ -133,17 +134,17 @@
 }
 
 .statLabel {
-  font-size: 0.62rem;
-  font-weight: 600;
+  font-size: 0.65rem;
+  font-weight: 700;
   letter-spacing: 0.14em;
-  color: var(--color-gold);
+  color: #6E5325;
   text-transform: uppercase;
 }
 
 .statValue {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--color-text-primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #110E0C;
   margin-top: 2px;
 }
 
@@ -295,8 +296,8 @@
 }
 
 .mapPinLabelInactive {
-  fill: #2B231D;
-  font-weight: 500;
+  fill: #110E0C;
+  font-weight: 600;
 }
 
 /* Map Legend */
@@ -308,9 +309,10 @@
   margin-top: 14px;
   padding-top: 12px;
   border-top: 1px solid rgba(23, 21, 19, 0.12);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
+  font-weight: 500;
   letter-spacing: 0.06em;
-  color: var(--color-text-secondary);
+  color: #1A1410;
 }
 
 .legendDot {
@@ -323,4 +325,5 @@
 
 .mapLegend strong {
   color: var(--color-burgundy);
+  font-weight: 700;
 }
