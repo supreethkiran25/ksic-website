@@ -127,7 +127,6 @@
   text-transform: uppercase;
   color: #382E25;
   line-height: 1.2;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 .scrollNeedleWrap {
@@ -192,7 +191,6 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #1A1410;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
 .kickerUnderline {
@@ -208,7 +206,6 @@
   font-weight: 600;
   letter-spacing: 0.04em;
   color: #6E1A24;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 /* Stately High-Fashion Display Headline: MYSORE SILK */
@@ -224,7 +221,6 @@
   margin: 0 0 24px 0;
   text-transform: uppercase;
   word-break: break-word;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8), 0 2px 14px rgba(255, 255, 255, 0.5);
 }
 
 .titleLine {
@@ -239,7 +235,6 @@
   line-height: 1.5;
   color: #120E0C;
   margin-bottom: 36px;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 12px rgba(255, 255, 255, 0.8);
 }
 
 .poeticLine {
@@ -264,7 +259,6 @@
   text-transform: uppercase;
   border-bottom: 2px solid #0E0A08;
   padding-bottom: 5px;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
   transition: color 240ms ease, border-color 240ms ease, transform 240ms ease;
 }
 
