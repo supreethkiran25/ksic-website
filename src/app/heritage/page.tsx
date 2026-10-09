@@ -3,15 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calendar, Award, Building, History } from "lucide-react";
 import { HERITAGE_MILESTONES, HERITAGE_NARRATIVE } from "@/data/heritage";
+import styles from "./Heritage.module.css";
 
 export const metadata = {
-  title: "Our Heritage · Since 1912",
+  title: "Our Heritage · Since 1912 | KSIC",
   description: "The royal history of the Mysore Silk Weaving Factory founded in 1912 by Maharaja Nalvadi Krishnaraja Wadiyar. Over a century of unbroken textile stewardship.",
 };
 
 export default function HeritagePage() {
   return (
-    <div style={{ paddingTop: "120px" }}>
+    <div className={styles.heritagePage}>
       {/* Editorial Header */}
       <section className="section-spacing" style={{ backgroundColor: "var(--color-bg-secondary)", borderBottom: "var(--border-rule)" }}>
         <div className="container-institutional reveal-up">
@@ -30,7 +31,7 @@ export default function HeritagePage() {
       {/* Narrative Section 1: The Royal Inception */}
       <section className="section-spacing" style={{ backgroundColor: "var(--color-bg-primary)", borderBottom: "var(--border-rule)" }}>
         <div className="container-institutional">
-          <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: "64px", alignItems: "center" }}>
+          <div className={styles.narrativeGrid}>
             <div className="reveal-left">
               <span className="editorial-label">1912 · ROYAL COURT PATRONAGE</span>
               <h2 className="display-section" style={{ marginBottom: "24px" }}>
@@ -50,7 +51,7 @@ export default function HeritagePage() {
               </div>
             </div>
 
-            <div className="reveal-scale" style={{ position: "relative", aspectRatio: "4/5", border: "1px solid rgba(23, 21, 19, 0.15)", backgroundColor: "#261F1A" }}>
+            <div className={`reveal-scale ${styles.mediaFrame}`}>
               <Image
                 src="/assets/heritage/nalvadi-krishnaraja-wadiyar.jpg"
                 alt="Sri Nalvadi Krishnaraja Wadiyar Maharaja of Mysore"
@@ -66,8 +67,8 @@ export default function HeritagePage() {
       {/* Narrative Section 2: Swiss Engineering on Mananthody Road */}
       <section className="section-spacing" style={{ backgroundColor: "var(--color-bg-paper)", borderBottom: "var(--border-rule)" }}>
         <div className="container-institutional">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: "64px", alignItems: "center" }}>
-            <div className="reveal-scale" style={{ position: "relative", aspectRatio: "16/11", border: "1px solid rgba(23, 21, 19, 0.15)", backgroundColor: "#261F1A" }}>
+          <div className={styles.narrativeGridReverse}>
+            <div className={`reveal-scale ${styles.mediaFrameWide}`}>
               <Image
                 src="/assets/heritage/ksic-1932-jacquard.jpg"
                 alt="Swiss Jacquard power looms installed during 1932 industrial expansion at KSIC Silk Weaving Factory"
@@ -119,17 +120,11 @@ export default function HeritagePage() {
             {HERITAGE_MILESTONES.map((m, idx) => (
               <div
                 key={m.year}
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "180px 1fr 1.2fr",
-                  gap: "36px",
-                  paddingBottom: "48px",
-                  borderBottom: idx !== HERITAGE_MILESTONES.length - 1 ? "1px solid rgba(23, 21, 19, 0.12)" : "none",
-                  alignItems: "baseline",
-                }}
+                className={styles.timelineItem}
+                style={{ borderBottom: idx !== HERITAGE_MILESTONES.length - 1 ? "1px solid rgba(23, 21, 19, 0.12)" : "none" }}
               >
                 <div>
-                  <div style={{ fontFamily: "var(--font-serif)", fontSize: "3.4rem", color: "var(--color-burgundy)", lineHeight: 1 }}>
+                  <div className={styles.timelineYear}>
                     {m.year}
                   </div>
                 </div>
@@ -141,7 +136,7 @@ export default function HeritagePage() {
                     {m.description}
                   </p>
                 </div>
-                <div style={{ padding: "16px 20px", backgroundColor: "var(--color-bg-secondary)", borderLeft: "2px solid var(--color-gold)", fontSize: "0.88rem", color: "var(--color-text-primary)", lineHeight: 1.6 }}>
+                <div className={styles.timelineSignificance}>
                   <strong>Significance: </strong>
                   {m.significance}
                 </div>

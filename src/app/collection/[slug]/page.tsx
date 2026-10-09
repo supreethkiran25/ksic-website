@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, ShieldCheck, Sparkles, MapPin, CheckCircle2, ChevronLeft } from "lucide-react";
 import { KSIC_PRODUCTS, KSICProduct } from "@/data/collections";
 import { SHOWROOMS_DATA } from "@/data/showrooms";
+import styles from "./ProductDetail.module.css";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!product) return { title: "Article Not Found" };
 
   return {
-    title: `${product.articleNumber} — ${product.name}`,
+    title: `${product.articleNumber} — ${product.name} | KSIC`,
     description: `${product.description} Verified pure silk and 24K gold zari weave by KSIC Ltd.`,
   };
 }
@@ -39,7 +40,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
   const related = KSIC_PRODUCTS.filter((p) => p.id !== product.id).slice(0, 3);
 
   return (
-    <div style={{ paddingTop: "120px" }}>
+    <div className={styles.productPage}>
       {/* Breadcrumb Navigation */}
       <div style={{ backgroundColor: "var(--color-bg-secondary)", borderBottom: "var(--border-rule)", padding: "16px 0" }}>
         <div className="container-institutional">
@@ -59,7 +60,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
       {/* Main Product Monograph */}
       <section className="section-spacing" style={{ backgroundColor: "var(--color-bg-primary)", borderBottom: "var(--border-rule)" }}>
         <div className="container-institutional">
-          <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: "64px", alignItems: "flex-start" }}>
+          <div className={styles.monographGrid}>
             {/* Visuals Column */}
             <div className="reveal-scale" style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
               <div style={{ position: "relative", width: "100%", aspectRatio: "4/3", backgroundColor: "#261F1A", border: "1px solid rgba(23, 21, 19, 0.15)" }}>
@@ -148,11 +149,11 @@ export default async function ProductDetailPage({ params }: PageProps) {
               </p>
 
               {/* Technical Specifications Table */}
-              <div style={{ border: "1px solid rgba(23, 21, 19, 0.12)", backgroundColor: "var(--color-bg-paper)", padding: "24px", marginBottom: "32px" }}>
+              <div className={styles.specsTable}>
                 <div style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-text-muted)", marginBottom: "16px", borderBottom: "1px solid rgba(23, 21, 19, 0.08)", paddingBottom: "8px" }}>
                   WEAVE & MATERIAL SPECIFICATIONS
                 </div>
-                <div style={{ display: "grid", gridTemplateColumns: "140px 1fr", rowGap: "12px", fontSize: "0.9rem" }}>
+                <div className={styles.specsGrid}>
                   <div style={{ color: "var(--color-text-muted)" }}>Article ID</div>
                   <div style={{ fontWeight: 600, color: "var(--color-text-primary)" }}>{product.articleNumber}</div>
 
@@ -247,7 +248,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
       {/* Related Articles */}
       <section className="section-spacing" style={{ backgroundColor: "var(--color-bg-primary)" }}>
         <div className="container-institutional">
-          <div className="reveal-up" style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "48px" }}>
+          <div className="reveal-up" style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "48px", flexWrap: "wrap", gap: "16px" }}>
             <div>
               <span className="editorial-label">ARCHIVE CONTINUATION</span>
               <h2 className="display-section">RELATED ARTICLES</h2>
@@ -258,7 +259,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
             </Link>
           </div>
 
-          <div className="reveal-stagger" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "32px" }}>
+          <div className={`reveal-stagger ${styles.relatedGrid}`}>
             {related.map((rel) => (
               <Link
                 key={rel.id}
@@ -278,7 +279,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
                     src={rel.images.hero}
                     alt={rel.name}
                     fill
-                    sizes="33vw"
+                    sizes="(max-width: 900px) 100vw, 33vw"
                     style={{ objectFit: "cover" }}
                   />
                   <div style={{ position: "absolute", top: "12px", left: "12px", backgroundColor: "rgba(24, 19, 15, 0.9)", padding: "4px 10px", color: "var(--color-gold-bright)", fontSize: "0.68rem", letterSpacing: "0.14em", fontWeight: 600 }}>

@@ -3,15 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, FileText, CheckCircle2, Building, Users } from "lucide-react";
 import { INSTITUTIONAL_OVERVIEW } from "@/data/institution";
+import styles from "./Institution.module.css";
 
 export const metadata = {
-  title: "The Institution · Governance & Corporate Stewardship",
+  title: "The Institution · Governance & Corporate Stewardship | KSIC",
   description: "Karnataka Silk Industries Corporation Limited (KSIC). Official enterprise profile, operating manufacturing divisions, RTI disclosures, and Quality Management certifications.",
 };
 
 export default function InstitutionPage() {
   return (
-    <div style={{ paddingTop: "120px" }}>
+    <div className={styles.institutionPage}>
       {/* Header */}
       <section className="section-spacing" style={{ backgroundColor: "var(--color-bg-secondary)", borderBottom: "var(--border-rule)" }}>
         <div className="container-institutional reveal-up">
@@ -47,7 +48,7 @@ export default function InstitutionPage() {
       {/* Corporate Overview & Mandate */}
       <section className="section-spacing" style={{ backgroundColor: "var(--color-bg-primary)", borderBottom: "var(--border-rule)" }}>
         <div className="container-institutional">
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "64px", alignItems: "flex-start" }}>
+          <div className={styles.mandateGrid}>
             <div className="reveal-left">
               <span className="editorial-label">MANDATE & OBJECTIVES</span>
               <h2 className="display-section" style={{ marginBottom: "24px" }}>
@@ -60,7 +61,7 @@ export default function InstitutionPage() {
                 Unlike commercial fashion corporations, KSIC operates with a public sector covenant: zero compromise on pure mulberry filament count, zero dilution of pure gold and silver zari composition, and full lifetime traceability for every customer.
               </p>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", borderTop: "1px solid rgba(23, 21, 19, 0.12)", paddingTop: "24px" }}>
+              <div className={styles.corporateMetaGrid}>
                 <div>
                   <div style={{ fontSize: "0.72rem", letterSpacing: "0.15em", color: "var(--color-text-muted)", textTransform: "uppercase" }}>Corporate Identification</div>
                   <div style={{ fontFamily: "monospace", fontSize: "0.95rem", color: "var(--color-text-primary)", marginTop: "4px" }}>{INSTITUTIONAL_OVERVIEW.corporateId}</div>
@@ -73,7 +74,7 @@ export default function InstitutionPage() {
             </div>
 
             {/* Corporate Address & Contact */}
-            <div className="reveal-scale" style={{ padding: "36px", backgroundColor: "var(--color-bg-paper)", border: "1px solid rgba(23, 21, 19, 0.15)" }}>
+            <div className={`reveal-scale ${styles.addressBox}`}>
               <div style={{ fontSize: "0.75rem", letterSpacing: "0.18em", color: "var(--color-burgundy)", fontWeight: 600, textTransform: "uppercase", marginBottom: "16px" }}>
                 HEADQUARTERS (CENTRAL OFFICE)
               </div>
@@ -104,7 +105,7 @@ export default function InstitutionPage() {
             </p>
           </div>
 
-          <div className="reveal-stagger" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "32px" }}>
+          <div className={`reveal-stagger ${styles.divisionsGrid}`}>
             {INSTITUTIONAL_OVERVIEW.keyUnits.map((u) => (
               <div key={u.unit} className="hover-lift" style={{ padding: "32px", backgroundColor: "var(--color-bg-paper)", border: "1px solid rgba(23, 21, 19, 0.12)" }}>
                 <span style={{ fontSize: "0.72rem", letterSpacing: "0.16em", color: "var(--color-gold)", textTransform: "uppercase", fontWeight: 600 }}>
@@ -131,7 +132,7 @@ export default function InstitutionPage() {
       {/* Right to Information (RTI) & Citizen Charter */}
       <section className="section-spacing" id="rti" style={{ backgroundColor: "var(--color-bg-primary)" }}>
         <div className="container-institutional">
-          <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: "64px", alignItems: "flex-start" }}>
+          <div className={styles.rtiGrid}>
             <div className="reveal-left">
               <span className="editorial-label">PUBLIC DISCLOSURE & TRANSPARENCY</span>
               <h2 className="display-section" style={{ marginBottom: "20px" }}>
@@ -167,7 +168,7 @@ export default function InstitutionPage() {
             </div>
 
             {/* Citizen Charter & Tenders */}
-            <div id="charter" style={{ padding: "36px", backgroundColor: "var(--color-bg-secondary)", border: "1px solid rgba(23, 21, 19, 0.15)" }}>
+            <div id="charter" className={styles.charterBox}>
               <div style={{ fontSize: "0.75rem", letterSpacing: "0.16em", color: "var(--color-gold)", textTransform: "uppercase", fontWeight: 600, marginBottom: "12px" }}>
                 CITIZEN’S CHARTER
               </div>

@@ -3,15 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Flame, ShieldCheck, Sparkles, CheckCircle2 } from "lucide-react";
 import { CRAFT_STAGES } from "@/data/craft";
+import styles from "./Craft.module.css";
 
 export const metadata = {
-  title: "Craft & Technical Monograph · From Cocoon to Silk",
+  title: "Craft & Technical Monograph · From Cocoon to Silk | KSIC",
   description: "Detailed technical monograph of Mysore Silk production. Integrated sericulture, T. Narasipura filature reeling, 26-28 denier twist chemistry, and 24K gold zari weaving.",
 };
 
 export default function CraftPage() {
   return (
-    <div style={{ paddingTop: "120px" }}>
+    <div className={styles.craftPage}>
       {/* Header */}
       <section className="section-spacing" style={{ backgroundColor: "var(--color-bg-secondary)", borderBottom: "var(--border-rule)" }}>
         <div className="container-institutional reveal-up">
@@ -28,51 +29,46 @@ export default function CraftPage() {
       {/* 7 Stages Deep Dive */}
       <section className="section-spacing" style={{ backgroundColor: "var(--color-bg-primary)", borderBottom: "var(--border-rule)" }}>
         <div className="container-institutional">
-          <div style={{ display: "flex", flexDirection: "column", gap: "100px" }}>
+          <div className={styles.stagesList}>
             {CRAFT_STAGES.map((stage, idx) => {
               const isEven = idx % 2 === 0;
               return (
                 <div
                   key={stage.step}
                   id={`stage-${stage.step}`}
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: isEven ? "1.1fr 1fr" : "1fr 1.1fr",
-                    gap: "64px",
-                    alignItems: "center",
-                  }}
+                  className={`${styles.stageCard} ${isEven ? "" : styles.stageCardEven}`}
                 >
-                  <div className={isEven ? "reveal-left" : "reveal-right"} style={{ order: isEven ? 1 : 2 }}>
-                    <div style={{ display: "flex", alignItems: "baseline", gap: "16px", marginBottom: "8px" }}>
-                      <span style={{ fontFamily: "var(--font-serif)", fontSize: "3.2rem", color: "var(--color-burgundy)", lineHeight: 1 }}>
+                  <div className={`${isEven ? "reveal-left" : "reveal-right"} ${styles.textContent}`}>
+                    <div className={styles.stageHeader}>
+                      <span className={styles.stageNumber}>
                         {stage.step}
                       </span>
                       {stage.kannadaName && (
-                        <span style={{ fontFamily: "var(--font-kannada)", fontSize: "1.2rem", color: "var(--color-gold)" }}>
+                        <span className={styles.stageKannada}>
                           {stage.kannadaName}
                         </span>
                       )}
                     </div>
 
-                    <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "2.2rem", color: "var(--color-text-primary)", marginBottom: "16px" }}>
+                    <h2 className={styles.stageTitle}>
                       {stage.title}
                     </h2>
 
-                    <p style={{ fontStyle: "italic", fontFamily: "var(--font-serif)", fontSize: "1.15rem", color: "var(--color-burgundy)", marginBottom: "18px" }}>
+                    <p className={styles.stageSummary}>
                       {stage.summary}
                     </p>
 
-                    <p style={{ fontSize: "1.02rem", lineHeight: 1.75, color: "var(--color-text-secondary)", marginBottom: "24px" }}>
+                    <p className={styles.stageDetails}>
                       {stage.details}
                     </p>
 
-                    <div style={{ padding: "16px 20px", backgroundColor: "var(--color-bg-secondary)", borderLeft: "2px solid var(--color-gold)", fontSize: "0.85rem", color: "var(--color-text-primary)" }}>
+                    <div className={styles.stageSpecBox}>
                       <strong>Technical Spec: </strong>
                       {stage.technicalSpec}
                     </div>
                   </div>
 
-                  <div className="reveal-scale" style={{ order: isEven ? 2 : 1, position: "relative", aspectRatio: "4/3", border: "1px solid rgba(23, 21, 19, 0.15)", backgroundColor: "#201A15" }}>
+                  <div className={`reveal-scale ${styles.mediaContent}`}>
                     <Image
                       src={stage.image}
                       alt={stage.title}
@@ -80,7 +76,7 @@ export default function CraftPage() {
                       sizes="(max-width: 900px) 100vw, 50vw"
                       style={{ objectFit: "cover" }}
                     />
-                    <div style={{ position: "absolute", bottom: "16px", left: "16px", backgroundColor: "rgba(24, 19, 15, 0.9)", padding: "6px 14px", color: "var(--color-gold-bright)", fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", fontWeight: 600 }}>
+                    <div className={styles.mediaBadge}>
                       STAGE {stage.step} · {stage.name}
                     </div>
                   </div>
@@ -102,9 +98,9 @@ export default function CraftPage() {
             </p>
           </div>
 
-          <div className="reveal-stagger" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "32px" }}>
-            <div className="hover-lift" style={{ padding: "32px", backgroundColor: "var(--color-bg-secondary)", border: "1px solid rgba(23, 21, 19, 0.12)" }}>
-              <div style={{ fontFamily: "var(--font-serif)", fontSize: "3rem", color: "var(--color-burgundy)", marginBottom: "8px" }}>
+          <div className={`reveal-stagger ${styles.metallurgyGrid}`}>
+            <div className={`hover-lift ${styles.metallurgyCard}`}>
+              <div className={styles.metallurgyStat} style={{ color: "var(--color-burgundy)" }}>
                 65%
               </div>
               <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "1.3rem", marginBottom: "12px" }}>
@@ -115,8 +111,8 @@ export default function CraftPage() {
               </p>
             </div>
 
-            <div className="hover-lift" style={{ padding: "32px", backgroundColor: "var(--color-bg-secondary)", border: "1px solid rgba(23, 21, 19, 0.12)" }}>
-              <div style={{ fontFamily: "var(--font-serif)", fontSize: "3rem", color: "var(--color-gold)", marginBottom: "8px" }}>
+            <div className={`hover-lift ${styles.metallurgyCard}`}>
+              <div className={styles.metallurgyStat} style={{ color: "var(--color-gold)" }}>
                 0.65%
               </div>
               <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "1.3rem", marginBottom: "12px" }}>
@@ -127,8 +123,8 @@ export default function CraftPage() {
               </p>
             </div>
 
-            <div className="hover-lift" style={{ padding: "32px", backgroundColor: "var(--color-bg-secondary)", border: "1px solid rgba(23, 21, 19, 0.12)" }}>
-              <div style={{ fontFamily: "var(--font-serif)", fontSize: "3rem", color: "var(--color-text-primary)", marginBottom: "8px" }}>
+            <div className={`hover-lift ${styles.metallurgyCard}`}>
+              <div className={styles.metallurgyStat} style={{ color: "var(--color-text-primary)" }}>
                 100%
               </div>
               <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "1.3rem", marginBottom: "12px" }}>
@@ -145,7 +141,7 @@ export default function CraftPage() {
       {/* Official Silk Identification & Burning Test */}
       <section className="section-spacing" id="authenticity" style={{ backgroundColor: "var(--color-bg-primary)" }}>
         <div className="container-institutional">
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "64px", alignItems: "center" }}>
+          <div className={styles.burningGrid}>
             <div className="reveal-left">
               <span className="editorial-label">TESTING PROTOCOL</span>
               <h2 className="display-section" style={{ marginBottom: "20px" }}>
@@ -191,7 +187,7 @@ export default function CraftPage() {
               </div>
             </div>
 
-            <div className="reveal-scale" style={{ padding: "40px", backgroundColor: "var(--color-bg-secondary)", border: "1px solid rgba(23, 21, 19, 0.15)" }}>
+            <div className={`reveal-scale ${styles.preservationBox}`}>
               <div style={{ fontFamily: "var(--font-serif)", fontSize: "1.8rem", color: "var(--color-burgundy)", marginBottom: "16px" }}>
                 Preservation Guidelines
               </div>

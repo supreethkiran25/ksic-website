@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { MapPin, Phone, Clock, ExternalLink, Compass, Building, Calendar, ArrowRight } from "lucide-react";
 import { SHOWROOMS_DATA, ShowroomLocation } from "@/data/showrooms";
+import styles from "./Stores.module.css";
 
 export default function StoresPage() {
   const [selectedCity, setSelectedCity] = useState<string>("All");
@@ -21,7 +22,7 @@ export default function StoresPage() {
   });
 
   return (
-    <div style={{ paddingTop: "120px" }}>
+    <div className={styles.storesPage}>
       {/* Header */}
       <section className="section-spacing" style={{ backgroundColor: "var(--color-bg-secondary)", borderBottom: "var(--border-rule)" }}>
         <div className="container-institutional reveal-up">
@@ -38,10 +39,10 @@ export default function StoresPage() {
       {/* Special Highlight: Factory Visit in Mysuru */}
       <section style={{ backgroundColor: "var(--color-bg-paper)", borderBottom: "var(--border-rule)", padding: "48px 0" }}>
         <div className="container-institutional reveal-scale">
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "48px", alignItems: "center" }}>
+          <div className={styles.factoryTourGrid}>
             <div>
               <span className="editorial-label" style={{ color: "var(--color-gold)" }}>HERITAGE FACTORY TOURS</span>
-              <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "2.2rem", color: "var(--color-text-primary)", marginBottom: "16px" }}>
+              <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1.8rem, 4vw, 2.2rem)", color: "var(--color-text-primary)", marginBottom: "16px" }}>
                 Witness 100+ Years of Active Weaving in Mysuru
               </h2>
               <p style={{ fontSize: "1rem", lineHeight: 1.7, color: "var(--color-text-secondary)", marginBottom: "20px" }}>
@@ -54,7 +55,7 @@ export default function StoresPage() {
               </div>
             </div>
 
-            <div style={{ padding: "28px", backgroundColor: "var(--color-bg-secondary)", border: "1px solid rgba(23, 21, 19, 0.12)" }}>
+            <div className={styles.authenticityNotice}>
               <div style={{ fontSize: "0.75rem", letterSpacing: "0.16em", color: "var(--color-burgundy)", textTransform: "uppercase", fontWeight: 600, marginBottom: "8px" }}>
                 AUTHENTICITY NOTICE
               </div>
@@ -69,9 +70,9 @@ export default function StoresPage() {
       {/* Directory & Filters */}
       <section className="section-spacing" style={{ backgroundColor: "var(--color-bg-primary)" }}>
         <div className="container-institutional">
-          <div className="reveal-up" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "40px", flexWrap: "wrap", gap: "20px" }}>
+          <div className={`reveal-up ${styles.controlsBar}`}>
             {/* City Tabs */}
-            <div style={{ display: "flex", gap: "8px", overflowX: "auto", scrollbarWidth: "none" }}>
+            <div className={styles.cityTabs}>
               {cities.map((city) => (
                 <button
                   key={city}
@@ -103,21 +104,13 @@ export default function StoresPage() {
                 placeholder="Search street, area, or pincode..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                style={{
-                  padding: "10px 18px",
-                  fontSize: "0.88rem",
-                  fontFamily: "var(--font-sans)",
-                  border: "1px solid rgba(23, 21, 19, 0.2)",
-                  backgroundColor: "var(--color-bg-paper)",
-                  width: "280px",
-                  outline: "none",
-                }}
+                className={styles.searchInput}
               />
             </div>
           </div>
 
           {/* Showrooms Grid */}
-          <div className="reveal-stagger" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "32px" }}>
+          <div className={`reveal-stagger ${styles.storesGrid}`}>
             {filteredShowrooms.map((store) => (
               <div
                 key={store.id}
