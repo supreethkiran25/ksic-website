@@ -17,15 +17,25 @@ export const Hero: React.FC = () => {
       style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}
       aria-label="Official Karnataka Mysore Silk Heritage"
     >
-      {/* 1. Full-Bleed Background Image (Exact Turmeric Gold Mysore Silk Saree Overlooking Mysore Palace) */}
+      {/* 1. Full-Bleed Responsive Background Images (Turmeric Gold Mysore Silk Saree Overlooking Mysore Palace) */}
       <div className={styles.heroBackground} style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
+        {/* Desktop Landscape (16:9) */}
         <Image
           src="/assets/heritage/ksic-royal-turmeric-hero.jpg"
           alt="Royal turmeric gold pure crepe Mysore Silk saree with authentic gold zari paisley border draped on travertine stone plinth overlooking Mysore Palace"
           fill
           priority
-          sizes="100vw"
-          className={styles.heroBackgroundImage}
+          sizes="(max-width: 768px) 1px, 100vw"
+          className={styles.heroBackgroundImageDesktop}
+        />
+        {/* Dedicated Mobile Portrait (9:16) - Tailored for smartphones to showcase the pure silk saree, 24k gold zari, and jasmine blossoms */}
+        <Image
+          src="/assets/heritage/ksic-royal-turmeric-hero-mobile.jpg"
+          alt="Royal turmeric gold pure crepe Mysore Silk saree with authentic gold zari paisley border draped on travertine stone plinth overlooking Mysore Palace"
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, 1px"
+          className={styles.heroBackgroundImageMobile}
         />
         {/* Ambient luminous scrim behind left editorial text for pristine legibility */}
         <div className={styles.heroTextBackdropScrim} aria-hidden="true" />
