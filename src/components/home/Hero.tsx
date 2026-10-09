@@ -143,14 +143,6 @@ export const Hero: React.FC = () => {
             </Link>
           </div>
         </div>
-
-        {/* Right Stone Wall Carving Label (Gandaberunda Royal Medallion) */}
-        <div className={styles.rightWallEtchingBlock} aria-hidden="true">
-          <div className={styles.etchingTextGroup}>
-            <span className={styles.etchingTitle}>{t.gandaberundaTitle}</span>
-            <span className={styles.etchingSubtitle}>{t.gandaberundaSubtitle}</span>
-          </div>
-        </div>
       </div>
     </section>
   );

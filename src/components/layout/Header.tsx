@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ShieldCheck, Globe } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import styles from "./Header.module.css";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
   const isHome = pathname === "/";
   const [isAtTop, setIsAtTop] = useState(true);
   const [isInHero, setIsInHero] = useState(true);
-  const { lang, setLang, t } = useLanguage();
+  const { lang, t } = useLanguage();
 
   useEffect(() => {
     if (!isHome) {
@@ -111,30 +111,6 @@ export const Header: React.FC = () => {
             );
           })}
         </ul>
-
-        {/* Right Action: Language Switcher (EN | ಕನ್ನಡ) */}
-        <div className={styles.actionsGroup}>
-          <div className={styles.langToggleWrap} role="group" aria-label="Language selector">
-            <Globe size={13} className={styles.langGlobeIcon} />
-            <button
-              type="button"
-              className={`${styles.langPill} ${lang === "en" ? styles.langPillActive : ""}`}
-              onClick={() => setLang("en")}
-              aria-label="Switch to English"
-            >
-              EN
-            </button>
-            <span className={styles.langDivider}>|</span>
-            <button
-              type="button"
-              className={`${styles.langPill} ${lang === "kn" ? styles.langPillActive : ""}`}
-              onClick={() => setLang("kn")}
-              aria-label="ಕನ್ನಡಕ್ಕೆ ಬದಲಾಯಿಸಿ"
-            >
-              ಕನ್ನಡ
-            </button>
-          </div>
-        </div>
       </nav>
 
       {/* 3. Mobile Edge-to-Edge Navigation Ribbon (Always accessible, no menu click needed) */}
